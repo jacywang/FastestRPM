@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,47 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wheel" translatesAutoresizingMaskIntoConstraints="NO" id="dad-Ua-Y3l">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="xTJ-9J-vda"/>
+                                    <constraint firstAttribute="height" constant="300" id="xcX-vx-Z6A"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="needle" translatesAutoresizingMaskIntoConstraints="NO" id="3sU-0Z-yMe">
+                                <rect key="frame" x="150" y="250" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="05L-ZX-Vgt"/>
+                                    <constraint firstAttribute="height" constant="100" id="RyP-Ht-UJn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="3sU-0Z-yMe" secondAttribute="centerY" id="VxL-eB-b79"/>
+                            <constraint firstAttribute="centerX" secondItem="dad-Ua-Y3l" secondAttribute="centerX" id="doq-au-T4a"/>
+                            <constraint firstAttribute="centerY" secondItem="dad-Ua-Y3l" secondAttribute="centerY" id="gre-tH-eYu"/>
+                            <constraint firstAttribute="centerX" secondItem="3sU-0Z-yMe" secondAttribute="centerX" id="vLA-sY-1be"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gxN-u4-yAU" appends="YES" id="bOf-qp-9xY"/>
+                            <outletCollection property="gestureRecognizers" destination="TNf-Iu-HUA" appends="YES" id="eHg-iT-sA0"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="needle" destination="3sU-0Z-yMe" id="NSV-3T-lrZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="gxN-u4-yAU"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="TNf-Iu-HUA"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="needle" width="400" height="400"/>
+        <image name="wheel" width="300" height="300"/>
+    </resources>
 </document>
